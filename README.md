@@ -16,23 +16,23 @@
 
 This project transforms raw, unstructured **CV/Resume text** into a fully structured JSON format using a **fine-tuned Llama-3 8B** model.
 
-Sistem üç ana parçadan oluşur:
+The system consists of three main components:
 
-* **`train_model.py`** → Model eğitimi (Unsloth + LoRA)
-* **`app.py`** → FastAPI tabanlı inference servisi
-* **`index.html`** → Gerçek zamanlı CV analiz dashboard'u
+* **`train_model.py`** → Model training (Unsloth + LoRA)
+* **`app.py`** → FastAPI-based inference service
+* **`index.html`** → Real-time CV analysis dashboard
 
-Model, `train_dataset.jsonl` içerisindeki örneklerden öğrenir ve CV’yi şu alanlara ayırır:
+The model learns from the examples in train_dataset.jsonl and breaks down the CV into the following fields:
 
-* Kişisel Bilgiler
-* Eğitim Geçmişi
-* İş Deneyimi
-* Teknik Yetenekler
-* Sertifikalar
-* Projeler
-* ...ve özel HR alanları
+* Personal Information
+* Education History
+* Work Experience
+* Technical Skills
+* Certifications
+* Projects
+* ...and custom HR fields
 
-Tamamen **modüler**, **ölçeklenebilir**, **üretim-düzeyi** (production-grade) bir mimari.
+A fully modular, scalable, production-grade architecture.
 
 ---
 
@@ -54,12 +54,12 @@ AI-CV-Parser/
 
 ## ✨ Features
 
-* 🔥 **Fine-Tuned Llama-3 8B** — yüksek doğruluklu CV anlama
-* ⚡ **Modüler Kod Yapısı** — eğitim ve inference birbirinden tamamen ayrılmış
-* 🛡️ **AST-Based JSON Repair System** — modele “format hatası” yaptırsa bile otomatik düzeltir
-* 🌐 **FastAPI + Cloudflare Tunnel** — kolay dışa açılım, port yönlendirme derdi yok
-* 🧩 **Modern Dashboard** — CV analizini görselleştiren dark-mode frontend
-* 📈 **%100 Accuracy Golden Set** — final testlerde mükemmel performans
+* 🔥 **Fine-Tuned Llama-3 8B** — high-accuracy CV understanding
+* ⚡ **Modüler Kod Yapısı** — training and inference are fully separated
+* 🛡️ **AST-Based JSON Repair System** — automatically fixes formatting errors even if the model produces them
+* 🌐 **FastAPI + Cloudflare Tunnel** — easy public exposure, no port-forwarding hassle
+* 🧩 **Modern Dashboard** — dark-mode frontend that visualizes CV analysis
+* 📈 **%100 Accuracy Golden Set** — flawless performance in final tests
 
 ---
 
@@ -95,7 +95,7 @@ Fine-tune Llama-3 using the provided dataset:
 python train_model.py
 ```
 
-Bu işlem sonucunda `./model/` klasörü oluşur.
+This process will create a `./model/` folder.
 
 ---
 
@@ -105,7 +105,7 @@ Bu işlem sonucunda `./model/` klasörü oluşur.
 python app.py
 ```
 
-Çalıştığında sana bir **Cloudflare URL** verecek:
+Once running, it will give you a **Cloudflare URL**:
 
 ```
 https://random-tunnel-name.trycloudflare.com
@@ -115,11 +115,11 @@ https://random-tunnel-name.trycloudflare.com
 
 ### ✔ 4. Launch the Dashboard
 
-1. `index.html` dosyasını aç
-2. API URL kısmına Cloudflare linkini yapıştır
-3. CV metnini gir → *Analyze*
+1. Open the `index.html` file
+2. Paste the Cloudflare link into the API URL field
+3. Enter the CV text → *Analyze*
 
-Hepsi bu kadar. 🎉
+That's all there is to it. 🎉
 
 ---
 
@@ -132,7 +132,7 @@ Hepsi bu kadar. 🎉
 | **Recall**    | **100%** |
 | **F1-Score**  | **100%** |
 
-Model, 45+ farklı CV formatı içeren "Golden Set" üzerinde test edilmiştir.
+The model has been tested on a "Golden Set" containing 45+ different CV formats.
 
 
 
@@ -143,4 +143,4 @@ Model, 45+ farklı CV formatı içeren "Golden Set" üzerinde test edilmiştir.
 
 # ⭐ Support
 
-Projeyi beğendiysen bir ⭐ bırakmayı unutma!
+If you liked the project, don't forget to leave a ⭐!

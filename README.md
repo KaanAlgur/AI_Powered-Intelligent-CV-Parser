@@ -132,7 +132,7 @@ That's all there is to it. 🎉
 | **Recall**    | **100%** |
 | **F1-Score**  | **100%** |
 
-The model has been tested on a "Golden Set" containing 45+ different CV formats.
+The model has been tested on a "Golden Set" containing 50+ different CV formats.
 
 
 
